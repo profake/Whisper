@@ -1,4 +1,5 @@
 # Whisper
+![alt-text](https://i.imgur.com/QyakyyY.gif)
 <p>Automatic whisper lua mod for UIF server</p>
 
 <p>This is a LUA mod that automatically adds the whisper character ~ when you start typing.</p>
