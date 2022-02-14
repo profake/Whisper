@@ -16,16 +16,24 @@ function main()
 		wait(20)
 		if sampIsChatInputActive() and whisper then
 			chatText = sampGetChatInputText()
-			if chatText ~= nil and string.len(chatText) > 0
-			and chatText:sub(1, 1) ~= "!"
-			and chatText:sub(1, 1) ~= "#"
-			and chatText:sub(1, 1) ~= "@"
-			and chatText:sub(1, 1) ~= "~"
-			and chatText:sub(1, 1) ~= "/"
-			and chatText:sub(1, 1) ~= "*"
-			and chatText:sub(1, 1) ~= " "
-			then
-				sampSetChatInputText("~" .. sampGetChatInputText()) 
+			if chatText ~= nil then
+				if string.len(chatText) > 0 and string.len(chatText) < 2 then 
+					if chatText:sub(1, 1) ~= "!"
+					and chatText:sub(1, 1) ~= "#"
+					and chatText:sub(1, 1) ~= "@"
+					and chatText:sub(1, 1) ~= "~"
+					and chatText:sub(1, 1) ~= "/"
+					and chatText:sub(1, 1) ~= "*"
+					and chatText:sub(1, 1) ~= "$"
+					and chatText:sub(1, 1) ~= " "
+					then
+						sampSetChatInputText("~" .. sampGetChatInputText()) 
+					end
+				else 
+					if chatText:sub(1, 1) == "~" and chatText:sub(2,2) == "k" then
+						sampSetChatInputText("~ k" .. chatText:sub(3)) 
+					end
+				end
 			end
 		end
 	end
