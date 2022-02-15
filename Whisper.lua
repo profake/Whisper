@@ -13,7 +13,7 @@ function main()
 	sampRegisterChatCommand("whisper", whisperToggle)
 	
 	while true do
-		wait(20)
+		wait(0)
 		if sampIsChatInputActive() and whisper then
 			chatText = sampGetChatInputText()
 			if chatText ~= nil then
